@@ -7,6 +7,10 @@ describe PagesController do
       get 'home'
       response.should be_success
     end
+     it "should have the right title" do
+      get 'home'
+      response.should have_selector("title", :content => "Home")
+    end
   end
 
   describe "GET 'contact'" do
